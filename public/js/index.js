@@ -61,6 +61,8 @@ const renderActiveNote = () => {
   } else {
     noteTitle.value = '';
     noteText.value = '';
+    noteTitle.removeAttribute('readonly');
+    noteText.removeAttribute('readonly');
   }
 };
 
@@ -178,4 +180,3 @@ if (window.location.pathname === '/notes') {
 }
 
 getAndRenderNotes();
-console.log("This file is loading proporly");
