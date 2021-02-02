@@ -178,3 +178,4 @@ if (window.location.pathname === '/notes') {
 }
 
 getAndRenderNotes();
+console.log("This file is loading proporly");
