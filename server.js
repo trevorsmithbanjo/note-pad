@@ -26,6 +26,19 @@ app.post('/api/notes', (req, res) => {
     res.json(newNote);
 })
 
+app.delete('/api/notes/:id', (req, res) => {
+    const chosenID = req.params.id;
+    console.log({ chosenID });
+
+    for (let i = 0; i < db.length; i++) {
+        if (chosenID === db[i].id) {
+            console.log(db[i]);
+            db.splice(i, 1);
+        }
+    }
+    res.json(db);
+})
+
 //html routes
 app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, 'public/notes.html')));
 app.use((req, res) => res.sendFile(path.join(__dirname, 'public/index.html')));
